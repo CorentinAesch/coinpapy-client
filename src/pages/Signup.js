@@ -1,6 +1,6 @@
 import { signup } from "../api";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export const Signup = () => {
     const [email, setEmail] = useState("");
@@ -18,16 +18,17 @@ export const Signup = () => {
         <>
             <h1>Sign Up</h1>
             <form onSubmit={ handleSubmitForm }>
+
+                <label>Email</label>
+                <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
+
                 <label>Password</label>
                 <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
-
-                <label>Username</label>
-                <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
 
                 <button type="submit">Sign Up</button>
             </form>
             <p>Already have an account?</p>
-            <link to={"/login"}>Login</link> 
+            <Link to={"/login"}>Login</Link> 
         </>
     )
 }

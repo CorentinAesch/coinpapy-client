@@ -1,42 +1,36 @@
-/* import { useState } from "react"
+import { useState } from "react"
 import { useNavigate } from "react-router";
-import { addProject, upload } from "../api";
 
 export const AddTransaction = () => {
-    const [price, setTitle] = useState("");
-    const [currency, setDescription] = useState("");
-    const [image, setImage] = useState();
+    const [coin, setCoin] = useState("");
+    const [quantity, setQuantity] = useState("");
+    const [price, setPrice] = useState("");
 
     let navigate = useNavigate();
 
     const handleFormSubmit = async (e) => {
         e.preventDefault();
 
-        const uploadData = new FormData();
-        uploadData.append("file", image);
-
-        const response = await upload(uploadData);
-        console.log(response);
-
-        await addProject({ title, description, imageUrl: response.data.fileUrl });
+        await addTransaction({ price, currency, amount, coin, total, transactionType, note });
         
         navigate("/");
     }
 
     return (
-        <form onSubmit={handleFormSubmit} encType="multipart/form-data">
-            <label labelFor="title">Title</label>
-            <input id="title" type="text" value={title}
-                onChange={(e) => setTitle(e.target.value)} />
+        <form onSubmit={handleFormSubmit}>
+            <label labelFor="coin">Currency</label>
+            <input id="coin" type="text" value={Currency}
+                onChange={(e) => setCoin(e.target.value)} />
 
-            <label labelFor="description">Decription</label>
-            <input id="description" type="text" value={description}
-                onChange={(e) => setDescription(e.target.value)} />
+            <label labelFor="quantity">Quantity</label>
+            <input id="quantity" type="text" value={quantity}
+                onChange={(e) => setQuantity(e.target.value)} />
 
-            <label labelFor="Image">Image</label>
-            <input type="file" onChange={(e) => setImage(e.target.files[0])} />
+            <label labelFor="price">Price</label>
+            <input id="price" type="text" 
+                onChange={(e) => setPrice(e.target.value)} />
 
-            <button type="submit">Create Project</button>
+            <button type="submit">Add transaction</button>
         </form>
     )
-} */
+}

@@ -1,14 +1,16 @@
 import { login } from "../api";
 import { useState, useContext } from "react";
-import { useNavigate } from "react-router-dom";
-//import { Link } from "react-router-dom";
-import { userContext } from "../context/user.context";
+import { Link, useNavigate } from "react-router-dom";
+import { UserContext } from "../context/user.context";
 
 export const Login = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
-    const { storeToken, authenticateUser } = useContext(userContext);
+    const { storeToken, authenticateUser } = useContext(UserContext);
+
+ 
+    
 
     const navigate = useNavigate();
 
@@ -22,7 +24,7 @@ export const Login = () => {
 
     return (
         <>
-            <h1>Sign Up</h1>
+            <h1>Login</h1>
             <form onSubmit={ handleSubmitForm }>
                 <label>Email</label>
                 <input type="text" value={email} onChange={(e) => setEmail(e.target.value)} />
@@ -33,7 +35,7 @@ export const Login = () => {
                 <button type="submit">Login</button>
             </form>
             <p>Don't have an account?</p>
-            <link to={"/signup"}>Sign up</link> 
-        </>
+            <Link to={"/signup"}>Sign up</Link> 
+       </>
     )
 }

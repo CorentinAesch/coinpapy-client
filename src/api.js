@@ -1,5 +1,9 @@
 import axios from 'axios';
-const baseURL = `${process.env.COINPAPY_API}/api`
+const baseURL = `${process.env.REACT_APP_COINPAPY_API}/api`
+
+export const index = () => {
+    return axios.get(`${baseURL}/`);
+}
 
 export const getAllCoins = () => {
     return axios.get(`${baseURL}/update`);
@@ -15,6 +19,10 @@ export const getAllAssets = () => {
 
 export const getAsset = (id) => {
     return axios.get(`${baseURL}/assets/${id}`);
+}
+
+export const addTransaction = () => {
+    return axios.get(`${baseURL}/transaction/create`);
 }
 
 export const signup = (user) => {

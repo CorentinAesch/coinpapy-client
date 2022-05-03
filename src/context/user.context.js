@@ -1,11 +1,12 @@
-import { createContext, useEffect, useState } from "react";
-import { verify } from "../api";
+import { createContext, useEffect, useState } from 'react';
+import { verify } from '../api';
 
-const userContext = createContext();
+const UserContext = createContext();
 
 function UserProviderWrapper({ children }) {
     const [user, setUser] = useState(null);
     const [isLoggedIn, setIsLoggedIn] = useState(false);
+    const [isLoading, setIsLoading] = useState(true);
 
     const storeToken = (token) => {
         localStorage.setItem("authToken", token);
@@ -19,20 +20,26 @@ function UserProviderWrapper({ children }) {
         const storedToken = localStorage.getItem("authToken");
 
         if (storeToken) {
-            (async() => {
+            //Verify if the token is valid
+            (async () => {
                 try {
                     const response = await verify(storedToken);
                     const user = response.data;
                     setUser(user);
                     setIsLoggedIn(true);
-                } catch(e) {
-                    setUser(null)
+                } catch (e) {
+                    setUser(null);
                     setIsLoggedIn(false)
+                } finally {
+                    setIsLoading(false);
                 }
-                
-            })();
+
+            })()
+
         } else {
             setUser(null);
+            setIsLoggedIn(false);
+            setIsLoading(false);
         }
     }
 
@@ -46,15 +53,19 @@ function UserProviderWrapper({ children }) {
     }, [])
 
     return (
-        <userContext.Provider value={( 
-                user, 
-                isLoggedIn, 
-                storeToken, 
-                authenticateUser, 
-                logoutUser )}>
+        <UserContext.Provider value={{
+            user,
+            setUser,
+            isLoggedIn,
+            storeToken,
+            authenticateUser,
+            logoutUser,
+            isLoading
+        }}>
             {children}
-        </userContext.Provider>
+        </UserContext.Provider>
     )
+
 }
 
-export { UserProviderWrapper, userContext}
+export { UserProviderWrapper, UserContext };
