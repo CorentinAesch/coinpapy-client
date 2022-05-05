@@ -21,8 +21,12 @@ export const getAsset = (id) => {
     return axios.get(`${baseURL}/assets/${id}`);
 }
 
-export const addTransaction = () => {
+/* export const addTransaction = () => {
     return axios.get(`${baseURL}/transaction/create`);
+} */
+
+export const getAllTransaction = () => {
+    return axios.get(`${baseURL}/transaction`);
 }
 
 export const signup = (user) => {

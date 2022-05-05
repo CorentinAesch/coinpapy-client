@@ -3,10 +3,10 @@ import { useContext } from "react";
 import { UserContext } from '../context/user.context';
 
 import { Navbar, Nav, NavDropdown, Container } from "react-bootstrap";
-import './navbar.scss';
+
 
 export const Appbar = () => {
-    const { isLoggedIn, user, logoutUser } = useContext(UserContext);
+    const { isLoggedIn, logoutUser } = useContext(UserContext);
 
     return (
         <Navbar bg="light" expand="lg">

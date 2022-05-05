@@ -11,12 +11,13 @@ import { HomePage } from './pages/HomePage';
 import { Signup } from './pages/Signup';
 import { Login } from './pages/Login';
 import { ListCoins } from './pages/ListCoins';
+import { ListTransaction } from './pages/ListTransaction'
+import { AddTransaction } from './pages/AddTransaction';
 
 
 function App() {
 
-  const value = useContext(UserContext);
-  console.log(value);
+  useContext(UserContext);
 
   return (
     <>
@@ -24,6 +25,8 @@ function App() {
       <Routes>      
           <Route path="/" element={ <HomePage /> } />
           <Route path={"/coins"} element={<ListCoins />} />
+          <Route path={"/transactions"} element={<ListTransaction />} />
+          <Route path={"/transactions/create"} element={<AddTransaction />} />
           <Route path={"/signup"} element={<Signup />} />
           <Route path={"/login"} element={<Login />} />
       </Routes>
