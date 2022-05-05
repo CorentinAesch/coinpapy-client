@@ -10,8 +10,6 @@ import { Link } from 'react-router-dom';
 export const ListTransaction = () => {
   const [transactions, setTransactions] = useState([{}])  
 
-  const navigate = useNavigate();
-
   useEffect(() => {
         (async () => {
             const response = await getAllTransaction();
@@ -21,7 +19,6 @@ export const ListTransaction = () => {
 
   return (
     <>
-        <button variant="dark" onClick={() => navigate('/transactions/create')}>New transaction</button>
         <ul>
             {transactions.map((transaction) => {
                 return <li key={transaction._id}>
