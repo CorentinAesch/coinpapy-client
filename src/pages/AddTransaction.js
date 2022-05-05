@@ -11,7 +11,7 @@ export const AddTransaction = () => {
     const handleFormSubmit = async (e) => {
         e.preventDefault();
 
-        await addTransaction({ price, currency, amount, coin, total, transactionType, note });
+        await AddTransaction({ price, currency, amount, coin, total, transactionType, note });
         
         navigate("/");
     }

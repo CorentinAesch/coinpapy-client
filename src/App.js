@@ -1,10 +1,12 @@
-import './App.css';
+import './App.scss';
+
 import { Routes, Route } from 'react-router-dom';
 import { UserContext } from './context/user.context';
 
 import { useContext } from 'react';
 
-import { Navbar } from './components/Navbar';
+import { Appbar } from './components/Appbar';
+/* import { Footer } from './components/Footer'; */
 import { HomePage } from './pages/HomePage';
 import { Signup } from './pages/Signup';
 import { Login } from './pages/Login';
@@ -17,15 +19,16 @@ function App() {
   console.log(value);
 
   return (
-    <div className="App">
-      <Navbar />  
-      <Routes>
-        <Route path="/" element={ <HomePage /> } />
-        <Route path={"/coins"} element={<ListCoins />} />
-        <Route path={"/signup"} element={<Signup />} />
-        <Route path={"/login"} element={<Login />} />
+    <>
+      <Appbar />  
+      <Routes>      
+          <Route path="/" element={ <HomePage /> } />
+          <Route path={"/coins"} element={<ListCoins />} />
+          <Route path={"/signup"} element={<Signup />} />
+          <Route path={"/login"} element={<Login />} />
       </Routes>
-    </div>
+      {/* <Footer /> */}
+    </>
   );
 }
 
