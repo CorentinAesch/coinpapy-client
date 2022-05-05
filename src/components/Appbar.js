@@ -24,7 +24,6 @@ export const Appbar = () => {
                         <Nav.Link href="/assets">Assets</Nav.Link>
                         <Nav.Link href="/watchlist">Watchlist</Nav.Link>
                         <Nav.Link href="/coins">Coins</Nav.Link>
-                        <Nav.Link href="/transactions">transactions</Nav.Link>
                         <NavDropdown title="Profile" id="basic-nav-dropdown" className="position-absolute end-0">
                             <NavDropdown.Item href="/edit" className="position-relative">Profile</NavDropdown.Item>
                             <NavDropdown.Divider />

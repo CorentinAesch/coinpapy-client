@@ -9,9 +9,6 @@ export const Login = () => {
 
     const { storeToken, authenticateUser } = useContext(UserContext);
 
- 
-    
-
     const navigate = useNavigate();
 
     const handleSubmitForm = async (e) => {

@@ -14,7 +14,9 @@ export const getACoin = (id) => {
 }
 
 export const getAllAssets = () => {
-    return axios.get(`${baseURL}/assets`);
+    return axios.get(`${baseURL}/assets`,  {
+        headers: { Authorization: `Bearer ${localStorage.getItem("authToken")}` }
+    });
 }
 
 export const getAsset = (id) => {
