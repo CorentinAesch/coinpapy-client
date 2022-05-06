@@ -10,7 +10,9 @@ export const getAllCoins = () => {
 }
 
 export const getACoin = (id) => {
-    return axios.get(`${baseURL}/${id}`);
+    return axios.get(`${baseURL}/coins/${id}`,  {
+        headers: { Authorization: `Bearer ${localStorage.getItem("authToken")}` }
+    });
 }
 
 export const getAllAssets = () => {

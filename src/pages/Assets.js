@@ -47,12 +47,8 @@ export const Assets = () => {
                         </tr>
                     )
                 })}
-                <tr> 
-                </tr>
                 </tbody>
             </Table>
-        
-
         </>
     )
 }

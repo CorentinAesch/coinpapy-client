@@ -6,7 +6,7 @@ import { getAsset } from '../api';
 
 const AssetDetails = () => {
     const { assetId } = useParams();
-    const [asset, setAsset] = useState();
+    const [asset, setAsset] = useState("");
 
     useEffect(() => {
         (async () => {
