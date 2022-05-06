@@ -20,7 +20,9 @@ export const getAllAssets = () => {
 }
 
 export const getAsset = (id) => {
-    return axios.get(`${baseURL}/assets/${id}`);
+    return axios.get(`${baseURL}/assets/${id}`, {
+        headers: { Authorization: `Bearer ${localStorage.getItem("authToken")}` }
+    });
 }
 
 /* export const addTransaction = () => {
