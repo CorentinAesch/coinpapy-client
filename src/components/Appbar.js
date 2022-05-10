@@ -9,30 +9,34 @@ export const Appbar = () => {
     const { isLoggedIn, logoutUser } = useContext(UserContext);
 
     return (
-        <Navbar bg="light" expand="lg">
+        <Navbar className="navbar navbar-expand-lg navbar-light border-bottom">
             <Container>
                 <Navbar.Brand href="/">CoinPapy</Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                 {!isLoggedIn && <>
-                    <Nav.Link href="/login" className="position-relative end-10">Login</Nav.Link>
-                    <Nav.Link href="/signup" className="position-absolute end-0">Signup</Nav.Link>
+                        <div className="navbar-nav ms-auto" aria-labelledby="navbar">
+                            <Nav.Link href="/login" className="position-relative end-10">Login</Nav.Link>
+                            <Nav.Link href="/signup" className="nav-link text-white btn btn-primary btn-sm">Signup</Nav.Link>
+                        </div>
                 </>}
                 {isLoggedIn && <>
                     <Nav className="me-auto">
-                        <Nav.Link href="/">Dashboard</Nav.Link>
-                        <Nav.Link href="/assets">Assets</Nav.Link>
-                        <Nav.Link href="/watchlist">Watchlist</Nav.Link>
-                        <Nav.Link href="/coins">Coins</Nav.Link>
-                        <NavDropdown title="Profile" id="basic-nav-dropdown" className="position-absolute end-0">
-                            <NavDropdown.Item href="/edit" className="position-relative">Profile</NavDropdown.Item>
+                        <Nav.Link href="/" className="nav-item mx-2">Dashboard</Nav.Link>
+                        <Nav.Link href="/assets" className="nav-item mx-2">Assets</Nav.Link>
+                        <Nav.Link href="/watchlist" className="nav-item mx-2">Watchlist</Nav.Link>
+                        <Nav.Link href="/coins" className="nav-item mx-2">Coins</Nav.Link>
+                        <NavDropdown title="Profile" id="basic-nav-dropdown" className="position-fixed end-0">
+                            <NavDropdown.Item href="/edit" className="dropdown-menu dropdown-menu-end border-0 shadow-sm" aria-labelledby="navbarDropdown">Profile</NavDropdown.Item>
                             <NavDropdown.Divider />
-                            <NavDropdown.Item onClick={logoutUser}>Logout</NavDropdown.Item>
+                            <NavDropdown.Item className="text-danger" onClick={logoutUser}>Logout</NavDropdown.Item>
                         </NavDropdown>
                     </Nav>
                 </>}
                 </Navbar.Collapse>
             </Container>
         </Navbar>
+
+       
     )
 }

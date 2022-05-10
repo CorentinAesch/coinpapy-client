@@ -20,19 +20,31 @@ export const Login = () => {
     }
 
     return (
-        <>
-            <h1>Login</h1>
-            <form onSubmit={ handleSubmitForm }>
-                <label>Email</label>
-                <input type="text" value={email} onChange={(e) => setEmail(e.target.value)} />
 
-                <label>Password</label>
-                <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
+        <section className="py-5 bg-light">
+            <div className="container sign-container my-md-4">
+                <div className="text-center mb-4">
+                    <h2>Sign in</h2>
+                </div>
+                <div className="card border-0 shadow-sm rounded p-4 p-md-5">
+                    <form onSubmit={ handleSubmitForm }>
+                        <div className="form-floating mb-3">
+                            <input type="text" className="form-control" id="email" name="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} />
+                            <label >Email</label>
+                        </div>
+                        <div className="form-floating mb-3">
+                            <input type="password" className="form-control" id="password" name="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} />
+                            <label>Password</label>
+                        </div>
+                        <div className="d-flex justify-content-center pb-4">
+                            <Link to={"/signup"}>Forgot Password?</Link>
+                        </div>
+                        <button type="submit" className="btn btn-primary w-100">Login</button>
+                        <Link to={"/signup"}><button type="submit" className="btn btn-outline-primary w-100 mt-3">Signup</button></Link>
+                    </form>
+                </div>
+            </div>
+        </section>
 
-                <button type="submit">Login</button>
-            </form>
-            <p>Don't have an account?</p>
-            <Link to={"/signup"}>Sign up</Link> 
-       </>
     )
 }
