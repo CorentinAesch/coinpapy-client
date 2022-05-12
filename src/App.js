@@ -15,6 +15,7 @@ import { WatchList } from './pages/WatchList';
 import { Assets } from './pages/Assets';
 import { AssetDetails } from './pages/AssetDetails';
 import { CoinDetails } from './pages/CoinDetails';
+import { NewTransaction } from './pages/AddTransaction';
 
 
 function App() {
@@ -29,6 +30,7 @@ function App() {
           <Route path={"/watchlist"} element={<WatchList />} />
           <Route path={"/assets"} element={<Assets />} />
           <Route path={"/assets/:assetId"} element={<AssetDetails />} />
+          <Route path={"/transactions/create"} element={<NewTransaction />} />
           <Route path={"/coins"} element={<ListCoins />} />
           <Route path={"/coins/:coinId"} element={<CoinDetails />} />
           <Route path={"/signup"} element={<Signup />} />

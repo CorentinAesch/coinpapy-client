@@ -27,9 +27,11 @@ export const getAsset = (id) => {
     });
 }
 
-/* export const addTransaction = () => {
-    return axios.get(`${baseURL}/transaction/create`);
-} */
+export const addTransaction = (transaction) => {
+    return axios.post(`${baseURL}/transaction/create`, transaction, {
+        headers: { Authorization: `Bearer ${localStorage.getItem("authToken")}` }
+    });
+} 
 
 export const getAllTransaction = () => {
     return axios.get(`${baseURL}/transaction`);
