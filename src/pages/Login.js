@@ -16,24 +16,24 @@ export const Login = () => {
         const response = await login({ email, password });
         storeToken(response.data.authToken);
         authenticateUser();
-        navigate("/");
+        await navigate("/dashboard");
     }
 
     return (
 
         <section className="py-5 bg-dark">
             <div className="container sign-container my-md-4">
-                <div className="text-center mb-4">
+                <div className="text-center mb-1">
                     <h2 className="text-bold">Sign in</h2>
                 </div>
                 <div className="card bg-dark border-0 shadow-sm rounded p-4 p-md-5">
                     <form onSubmit={ handleSubmitForm }>
                         <div className="form-floating mb-3">
-                            <input type="text" className="form-control" id="email" name="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} />
+                            <input type="text" className="form-control bg-lighter" id="email" name="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} />
                             <label>Email</label>
                         </div>
                         <div className="form-floating mb-3">
-                            <input type="password" className="form-control" id="password" name="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} />
+                            <input type="password" className="form-control bg-lighter" id="password" name="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} />
                             <label>Password</label>
                         </div>
                         <div className="d-flex justify-content-center pb-4">

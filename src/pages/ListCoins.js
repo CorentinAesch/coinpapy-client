@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from 'react-router-dom';
 
-import { Container, Table } from "react-bootstrap";
 import ToggleButton from 'react-bootstrap/ToggleButton'
 import { getAllCoins } from "../api";
 

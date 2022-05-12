@@ -63,13 +63,13 @@ export const Assets = () => {
                                         <div className="col d-none d-lg-block">Profit/Loss</div>
                                         <div className="col"></div>
                                     </div>
-                                    {assets.map((asset) => {
+                                    {assets && assets.coin && assets.map((asset) => {
                                         return (
                                             <ul className="list-group list-group-flush">
                                                 <li className="list-group-item px-0 d-flex row align-items-center py-2 py-md-2 mx-0">
                                                     <div className="col-4 col-md ps-md-0">
                                                         <Link to={`/assets/${asset._id}`} className="text-dark text-decoration-none d-flex align-items-center">
-                                                            <img src={asset.coin.image} className="me-2"alt="Bitcoin" width="34"/>
+                                                            <img src={asset.coin.image} className="me-2" alt="Bitcoin" width="34"/>
                                                             <div>
                                                                 <h3 className="h6 mb-0 ">{asset.coin.id}</h3>
                                                                 <p className="mb-0 text-muted text-uppercase"><small>{asset.coin.symbol}</small></p>

@@ -7,6 +7,8 @@ import { useContext } from 'react';
 
 import { Appbar } from './components/Appbar';
 import { Footer } from './components/Footer';
+import { IsPrivate } from './components/IsPrivate'
+
 import { HomePage } from './pages/HomePage';
 import { Signup } from './pages/Signup';
 import { Login } from './pages/Login';
@@ -16,6 +18,7 @@ import { Assets } from './pages/Assets';
 import { AssetDetails } from './pages/AssetDetails';
 import { CoinDetails } from './pages/CoinDetails';
 import { NewTransaction } from './pages/AddTransaction';
+import { Dashboard } from '@mui/icons-material';
 
 
 function App() {
@@ -26,15 +29,16 @@ function App() {
     <>
       <Appbar />  
       <Routes>      
-          <Route path="/" element={ <HomePage /> } />
-          <Route path={"/watchlist"} element={<WatchList />} />
-          <Route path={"/assets"} element={<Assets />} />
-          <Route path={"/assets/:assetId"} element={<AssetDetails />} />
-          <Route path={"/transactions/create"} element={<NewTransaction />} />
-          <Route path={"/coins"} element={<ListCoins />} />
-          <Route path={"/coins/:coinId"} element={<CoinDetails />} />
+          <Route path={"/"} element={ <HomePage /> } />
           <Route path={"/signup"} element={<Signup />} />
           <Route path={"/login"} element={<Login />} />
+          <Route path={"/dashboard"} element={<IsPrivate> <Dashboard /> </IsPrivate>}/>
+          <Route path={"/watchlist"} element={<IsPrivate><WatchList /></IsPrivate>} />
+          <Route path={"/assets"} element={<IsPrivate><Assets /></IsPrivate>} />
+          <Route path={"/assets/:assetId"} element={<IsPrivate><AssetDetails /></IsPrivate>} />
+          <Route path={"/transactions/create"} element={<IsPrivate><NewTransaction /></IsPrivate>} />
+          <Route path={"/coins"} element={<IsPrivate><ListCoins /></IsPrivate>} />
+          <Route path={"/coins/:coinId"} element={<IsPrivate><CoinDetails /></IsPrivate>} />
       </Routes>
       <Footer />
     </>

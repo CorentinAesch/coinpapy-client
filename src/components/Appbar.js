@@ -16,13 +16,14 @@ export const Appbar = () => {
                 <Navbar.Collapse id="basic-navbar-nav">
                 {!isLoggedIn && <>
                         <div className="navbar-nav ms-auto" aria-labelledby="navbar">
+                            <Nav.Link href="/" className="start-10">About</Nav.Link>
                             <Nav.Link href="/login" className="position-relative end-10">Login</Nav.Link>
                             <Nav.Link href="/signup" className="nav-link text-white btn btn-primary btn-sm">Signup</Nav.Link>
                         </div>
                 </>}
                 {isLoggedIn && <>
                     <Nav className="me-auto">
-                        <Nav.Link href="/" className="nav-item mx-2">Dashboard</Nav.Link>
+                        <Nav.Link href="/dashboard" className="nav-item mx-2">Dashboard</Nav.Link>
                         <Nav.Link href="/assets" className="nav-item mx-2">Assets</Nav.Link>
                         <Nav.Link href="/watchlist" className="nav-item mx-2">Watchlist</Nav.Link>
                         <Nav.Link href="/coins" className="nav-item mx-2">Coins</Nav.Link>

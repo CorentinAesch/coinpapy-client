@@ -41,7 +41,8 @@ $theme-colors: (
   "danger":     $danger,
   "light":      $light,
   "darker":     $gray-900,
-  "dark":       $dark
+  "dark":       $dark,
+  "lighter":    $gray-500
 ) !default;
 
 $min-contrast-ratio:   1 !default;
@@ -143,9 +144,9 @@ $form-floating-transition:        opacity .1s ease-in-out, transform .1s ease-in
         color:#ffffff !important;
     }
     .card-header{
-        background: #24201d !important;
+        background: $primary !important;
 
-        color:#ffffff !important;
+        color:$primary !important;
     }
     
     .text-dark,.select2-container--default .select2-selection--single .select2-selection__rendered{

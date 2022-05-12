@@ -18,12 +18,12 @@ export const Signup = () => {
         const response = await login({ email, password })
         storeToken(response.data.authToken);
         authenticateUser();
-        navigate("/");
+        navigate("/dashboard");
     }
 
     return (
         <>
-            <section className="py-5 bg-light">
+            <section className="py-5 bg-dark">
                 <div className="container sign-container my-md-4">
                     <div className="text-center mb-4">
                         <h2>Sign up to Coinbutter</h2>
@@ -32,14 +32,14 @@ export const Signup = () => {
                         <Link to={"/login"}>Sign in if you have an account?</Link>
                         </p>
                     </div>
-                    <div className="card border-0 shadow-sm rounded p-4 p-md-5">
+                    <div className="card border-0 shadow-sm rounded p-4 p-md-5 bg-dark">
                         <form onSubmit={ handleSubmitForm } method="POST">
                             <div className="form-floating mb-3">
-                                <input type="email" className="form-control shadow-sm" id="email" name="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} required />
+                                <input type="email" className="form-control shadow-sm bg-lighter" id="email" name="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} required />
                                 <label>Email address *</label>
                             </div>
                             <div className="form-floating mb-4">
-                                <input type="password" className="form-control shadow-sm {{#if errorMessage.password}}is-invalid{{/if}}" id="password" name="password" placeholder="Password" required value={password} onChange={(e) => setPassword(e.target.value)} />
+                                <input type="password" className="form-control shadow-sm bg-lighter" id="password" name="password" placeholder="Password" required value={password} onChange={(e) => setPassword(e.target.value)} />
                                 <label>Password *</label>
                             <div id="passwordHelp" className="form-text small text-center mt-2">Password must be at least 8 chars and must contain at least one number, one lowercase and one uppercase letter.</div>
                             </div>
