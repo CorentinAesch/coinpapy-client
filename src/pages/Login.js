@@ -16,7 +16,10 @@ export const Login = () => {
         const response = await login({ email, password });
         storeToken(response.data.authToken);
         authenticateUser();
-        await navigate("/dashboard");
+        setTimeout(() => {
+            navigate("/dashboard");
+        }, 500)
+         
     }
 
     return (

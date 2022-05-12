@@ -7,7 +7,7 @@ import { addTransaction } from "../api";
 export const NewTransaction = () => {
     const [currency, setCurrency] = useState("USD");
     const [coins, setCoins] = useState([]);
-    const [coin, setCoin] = useState();
+    const [coin, setCoin] = useState("627aaaa006f7a3e8b64cb7f6");
     const [amount, setAmount] = useState("");
     const [price, setPrice] = useState("");
     const [total, setTotal] = useState("");
@@ -21,14 +21,12 @@ export const NewTransaction = () => {
     useEffect(() => {
         (async () => {
             const response = await getAllCoins();
-            console.log("coin", coin)
             setCoins(response.data)
         })();
     }, [])
 
     const handleFormSubmit = async (e) => {
         e.preventDefault();
-        console.log("coin", coin)
         await addTransaction({ price, currency, amount, coin, total, transactionType, note, created });
         navigate("/assets");
     }
