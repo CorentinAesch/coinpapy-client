@@ -21,12 +21,12 @@ export const Login = () => {
 
     return (
 
-        <section className="py-5 bg-light">
+        <section className="py-5 bg-dark">
             <div className="container sign-container my-md-4">
                 <div className="text-center mb-4">
-                    <h2>Sign in</h2>
+                    <h2 className="text-bold">Sign in</h2>
                 </div>
-                <div className="card border-0 shadow-sm rounded p-4 p-md-5">
+                <div className="card bg-dark border-0 shadow-sm rounded p-4 p-md-5">
                     <form onSubmit={ handleSubmitForm }>
                         <div className="form-floating mb-3">
                             <input type="text" className="form-control" id="email" name="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} />

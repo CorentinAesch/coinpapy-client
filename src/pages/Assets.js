@@ -56,12 +56,12 @@ export const Assets = () => {
                                 </div>
                                 <div className="card-body pb-2 pt-0 mx-0 px-3">
                                     <div className="row p-2 border-bottom">
-                                            <div className="col-4 col-md ">Name</div>
-                                            <div className="col">Holdings</div>
-                                            <div className="col d-none d-lg-block">Price</div>
-                                            <div className="col d-none d-lg-block">Avg Buy Price</div>
-                                            <div className="col d-none d-lg-block">Profit/Loss</div>
-                                            <div className="col"></div>
+                                        <div className="col-4 col-md ">Name</div>
+                                        <div className="col">Holdings</div>
+                                        <div className="col d-none d-lg-block">Price</div>
+                                        <div className="col d-none d-lg-block">Avg Buy Price</div>
+                                        <div className="col d-none d-lg-block">Profit/Loss</div>
+                                        <div className="col"></div>
                                     </div>
                                     {assets.map((asset) => {
                                         return (
