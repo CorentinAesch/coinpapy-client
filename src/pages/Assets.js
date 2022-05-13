@@ -1,32 +1,14 @@
-import { useEffect, useState } from "react";
-import { getAllAssets } from "../api";
+import { useContext } from "react";
 import { Link } from 'react-router-dom';
-import { amountFormatter } from "../helpers/helpers";
+
+import { AssetsContext } from "../context/assets.context";
 
 
 
 export const Assets = () => {
-    const [assets, setAssets] = useState([]);
-    const [totalAmount, setTotalAmount] = useState("");
-    //const [assetValue, setAssetValue] = useState("");
-
-    useEffect(() => {
-        (async () => {
-            const response = await getAllAssets();
-            setAssets(response.data);
-        })();
-    }, []);
-
-    useEffect(() => {
-        (async () => {
-            let amount = 0;
-            for (let i = 0; i < assets.length; i++){
-                amount = amount + assets[i].amount * assets[i].coin.current_price;
-            }
-            amount = amountFormatter(amount)
-            setTotalAmount(amount);
-        })();
-    }, [assets]);
+    const { allAssets, totalAmount } = useContext(AssetsContext);
+    const [amount, setAmount] = totalAmount;
+    const [assets, setAssets] = allAssets;
 
     return (
         <> 
@@ -38,7 +20,7 @@ export const Assets = () => {
                                 <div className="card-body pt-0 px-0">
                                     <div className="d-flex align-items-start justify-content-between">
                                         <div>
-                                            <h1 className="display-3 mb-0">${ totalAmount }</h1>
+                                            <h1 className="display-3 mb-0">${ amount }</h1>
                                         </div>
                                         <div>
                                             <Link to={"/transactions/create"} className="btn btn-primary ps-2 me-2 mt-4">Buy/Sell</Link>

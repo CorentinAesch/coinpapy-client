@@ -18,7 +18,7 @@ import { Assets } from './pages/Assets';
 import { AssetDetails } from './pages/AssetDetails';
 import { CoinDetails } from './pages/CoinDetails';
 import { NewTransaction } from './pages/AddTransaction';
-import { Dashboard } from '@mui/icons-material';
+import { Dashboard } from './pages/Dashboard';
 
 
 function App() {
