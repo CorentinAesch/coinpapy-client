@@ -24,19 +24,19 @@ export const Login = () => {
 
     return (
 
-        <section className="py-5 bg-dark">
+        <section className="py-5 bg-light">
             <div className="container sign-container my-md-4">
                 <div className="text-center mb-1">
                     <h2 className="text-bold">Sign in</h2>
                 </div>
-                <div className="card bg-dark border-0 shadow-sm rounded p-4 p-md-5">
+                <div className="card bg-light border-0 shadow-sm rounded p-4 p-md-5">
                     <form onSubmit={ handleSubmitForm }>
                         <div className="form-floating mb-3">
                             <input type="text" className="form-control bg-lighter" id="email" name="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} />
                             <label>Email</label>
                         </div>
                         <div className="form-floating mb-3">
-                            <input type="password" className="form-control bg-lighter" id="password" name="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} />
+                            <input type="password" className="form-control bg-light" id="password" name="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} />
                             <label>Password</label>
                         </div>
                         <div className="d-flex justify-content-center pb-4">

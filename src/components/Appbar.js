@@ -29,10 +29,10 @@ export const Appbar = () => {
                         <Nav.Link href="/coins" className="nav-item mx-2">Coins</Nav.Link>
                     </Nav>
                     <Nav className="d-flex">
-                        <NavDropdown title="Profile" id="basic-nav-dropdown" className="navbar-nav ms-auto">
-                            <NavDropdown.Item href="/edit" className="dropdown-menu dropdown-menu-end border-0 shadow-sm" aria-labelledby="navbarDropdown">Profile</NavDropdown.Item>
+                        <NavDropdown title="Profile" id="basic-nav-dropdown mr-3" className="navbar-nav">
+                            <NavDropdown.Item href="/edit" className="dropdown-item" aria-labelledby="navbarDropdown">Profile</NavDropdown.Item>
                             <NavDropdown.Divider />
-                            <NavDropdown.Item className="text-danger" onClick={logoutUser}>Logout</NavDropdown.Item>
+                            <NavDropdown.Item className="dropdown-item text-danger" aria-labelledby="navbarDropdown" onClick={logoutUser}>Logout</NavDropdown.Item>
                         </NavDropdown>
                     </Nav>
                 </>}

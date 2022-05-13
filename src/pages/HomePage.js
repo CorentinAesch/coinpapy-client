@@ -21,10 +21,10 @@ export const HomePage = () => {
 
     return (
       <>
-        <section className="py-4 py-md-5">
+        <section className="mt-5 py-2 py-md-6">
           <div className="container">
-              <div className="row align-items-center">
-                  <div className="col-12 col-lg-5  text-center">
+              <div className="align-items-center">
+                  <div className="text-center">
                       <h1 className="display-2">Your number 1 Crypto Tracker.</h1>
                       <p className="lead">Track and manage your portfolios.</p>
                       <form onSubmit={ formHandler } method="GET" className="mt-4 d-flex justify-content-center">
@@ -36,9 +36,6 @@ export const HomePage = () => {
                       </form>
                       <p className="small text-muted mt-3 col-md-9 mx-auto">Coinpapy is not a trading platform and is not responsible for gains or losses of your portfolios.</p>
                   </div>
-                  <div className="col-12 col-lg-7">
-                      <img src="/public/images/Homepage-exch.png" alt="exchange" className="w-100"/>
-                  </div>
               </div>  
             </div>
         </section>
@@ -49,17 +46,11 @@ export const HomePage = () => {
                     <h2 className="h1">Follow Any Coin You Want</h2>
                     <p className="lead mb-4">Accuratly follow your favourite currency.</p>
                 </div> 
-                <div class="row">
-                  <img class="col" src="https://assets.coingecko.com/coins/images/1/large/bitcoin.png?1547033579" alt="bitcoin"/>
-                  <img class="col" src="https://assets.coingecko.com/coins/images/279/large/ethereum.png?1595348880" alt="ethereum"/>
-                  <img class="col" src="https://assets.coingecko.com/coins/images/825/large/bnb-icon2_2x.png?1644979850" alt="bnb"/>
-                  <img class="col" src="https://assets.coingecko.com/coins/images/975/large/cardano.png?1547034860" alt="cardano"/>
-                </div> 
-                <div class="row">
-                  <img class="col" src="https://assets.coingecko.com/coins/images/4128/large/solana.png?1640133422" alt="solana"/>
-                  <img class="col" src="https://assets.coingecko.com/coins/images/11939/large/shiba.png?1622619446" alt="shiba"/>
+                <div className="d-flex justify-content-between">
+                  {coins && coins.map((coin) => {
+                    return <img key={coin._id} className="p-2 w-50" src={coin.image} alt="bitcoin"/>
+                  })}
                 </div>
-                  
             </div>
         </section>
       </>

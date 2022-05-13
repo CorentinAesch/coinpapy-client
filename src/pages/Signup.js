@@ -23,7 +23,7 @@ export const Signup = () => {
 
     return (
         <>
-            <section className="py-5 bg-dark">
+            <section className="py-5 bg-light">
                 <div className="container sign-container my-md-4">
                     <div className="text-center mb-4">
                         <h2>Sign up to Coinbutter</h2>
@@ -32,7 +32,7 @@ export const Signup = () => {
                         <Link to={"/login"}>Sign in if you have an account?</Link>
                         </p>
                     </div>
-                    <div className="card border-0 shadow-sm rounded p-4 p-md-5 bg-dark">
+                    <div className="card border-0 shadow-sm rounded p-4 p-md-5 bg-light">
                         <form onSubmit={ handleSubmitForm } method="POST">
                             <div className="form-floating mb-3">
                                 <input type="email" className="form-control shadow-sm bg-lighter" id="email" name="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} required />

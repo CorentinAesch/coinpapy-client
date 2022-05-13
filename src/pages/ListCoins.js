@@ -42,7 +42,7 @@ console.log("YOOO", coins)
                                     {coins.map((coin) => {
                                         return (
                                             <ul key={coin.id} className="list-group list-group-flush">
-                                                <li className="list-group-item px-0 d-flex row align-items-center py-2 py-md-2 mx-0">
+                                                <li className="list-group-item px-0 d-flex flex-row align-items-center justify-content-between py-2 py-md-2 mx-0">
                                                     {/* <ToggleButton/> */}
                                                     <div className="col-4 col-md ps-md-0">
                                                         <Link to={`/coins/${coin._id}`} key={coin.id} className="text-dark text-decoration-none d-flex">

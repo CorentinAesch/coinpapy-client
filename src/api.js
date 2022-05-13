@@ -9,6 +9,10 @@ export const getAllCoins = () => {
     return axios.get(`${baseURL}/update`);
 }
 
+export const getTrendings = () => {
+    return axios.get(`${baseURL}/trending`);
+}
+
 export const getACoin = (id) => {
     return axios.get(`${baseURL}/coins/${id}`,  {
         headers: { Authorization: `Bearer ${localStorage.getItem("authToken")}` }
