@@ -37,6 +37,12 @@ export const getAllTransaction = () => {
     return axios.get(`${baseURL}/transaction`);
 }
 
+export const deleteATransaction = (assetId, transactionId) => {
+    return axios.post(`${baseURL}/asset/${assetId}/transaction/${transactionId}/delete`, transactionId, transactionId, {
+        headers: { Authorization: `Bearer ${localStorage.getItem("authToken")}` }
+    });
+}
+
 export const signup = (user) => {
     return axios.post(`${baseURL}/signup`, user);
 }

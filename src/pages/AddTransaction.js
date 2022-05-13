@@ -11,7 +11,7 @@ export const NewTransaction = () => {
     const [amount, setAmount] = useState("");
     const [price, setPrice] = useState("");
     const [total, setTotal] = useState("");
-    const [transactionType, setTransactionType] = useState();
+    const [transactionType, setTransactionType] = useState("buy");
     const [created, setCreated] = useState();
     const [note, setNote] = useState("");
 

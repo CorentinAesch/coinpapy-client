@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { getAllAssets } from "../api";
 import { Link } from 'react-router-dom';
+import { amountFormatter } from "../helpers/helpers";
 
 
 
@@ -12,9 +13,7 @@ export const Assets = () => {
     useEffect(() => {
         (async () => {
             const response = await getAllAssets();
-            setTotalAmount("")
             setAssets(response.data);
-            console.log("Yooo", response.data)
         })();
     }, []);
 
@@ -24,14 +23,13 @@ export const Assets = () => {
             for (let i = 0; i < assets.length; i++){
                 amount = amount + assets[i].amount * assets[i].coin.current_price;
             }
+            amount = amountFormatter(amount)
             setTotalAmount(amount);
         })();
     }, [assets]);
 
     return (
         <> 
-           {/*  <button variant="dark" onClick={() => navigate('/transactions/create')}>New transaction</button> */}
-
             <section className="py-3 py-md-5">
                 <div className="container">
                     <div className="row">
@@ -63,9 +61,9 @@ export const Assets = () => {
                                         <div className="col d-none d-lg-block">Profit/Loss</div>
                                         <div className="col"></div>
                                     </div>
-                                    {assets && assets.coin && assets.map((asset) => {
+                                    {assets && assets.map((asset) => {
                                         return (
-                                            <ul className="list-group list-group-flush">
+                                            <ul key={asset._id} className="list-group list-group-flush">
                                                 <li className="list-group-item px-0 d-flex row align-items-center py-2 py-md-2 mx-0">
                                                     <div className="col-4 col-md ps-md-0">
                                                         <Link to={`/assets/${asset._id}`} className="text-dark text-decoration-none d-flex align-items-center">
