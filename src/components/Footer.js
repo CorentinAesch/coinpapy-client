@@ -7,7 +7,7 @@ export const Footer = () => {
     const { isLoggedIn, logoutUser } = useContext(UserContext);
 
   return (
-    <footer className='container fixed-bottom bg-dark'> 
+    <footer className='container sticky-bottom bg-light'> 
         <div className="container d-flex flex-wrap justify-content-between align-items-center py-3 my-4">
             <p className="col-md-4 mb-0 text-muted">© 2022 Coinpapy.</p>
             <ul className="nav col-md-5 justify-content-end">

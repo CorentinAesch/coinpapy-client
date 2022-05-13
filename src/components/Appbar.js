@@ -9,9 +9,9 @@ export const Appbar = () => {
     const { isLoggedIn, logoutUser } = useContext(UserContext);
 
     return (
-        <Navbar className="navbar navbar-dark">
+        <Navbar className="navbar navbar-light bg-light fixed-top">
             <Container>
-                <Navbar.Brand href="/">CoinPapy</Navbar.Brand>
+                <Navbar.Brand href="/">Coinpapy</Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                 {!isLoggedIn && <>

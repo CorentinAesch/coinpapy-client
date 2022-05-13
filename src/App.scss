@@ -59,7 +59,7 @@ $border-radius-lg:            .6rem !default;
 $component-active-bg:         $light !default;
 $enable-gradients: true;
 
-$body-bg: $dark;
+$body-bg: $light;
 
 @import "../node_modules/bootstrap/scss/bootstrap";
 
@@ -132,15 +132,15 @@ $form-floating-transition:        opacity .1s ease-in-out, transform .1s ease-in
     --bs-body-bg: #1d1610;
 
     .bg-white,.bg-dark,.bg-light,.nav-tabs .nav-link.active, .nav-tabs .nav-item.show .nav-link{
-        background: #1d1610 !important;
+        background: #ffffff !important;
     }
     .select2-container--default .select2-results__option--highlighted.select2-results__option--selectable{
-        background-color: #575049;
+        background-color: #ffffff;
         color: #ffffff;
     }
 
     .card,.list-group-item,.dropdown-menu,.dropdown-item,.form-control,.form-select,.select2-dropdown,.select2-container--default .select2-selection--single{
-        background: #24201d;
+        background: #ffffff;
         color:#ffffff !important;
     }
     .card-header{

@@ -104,7 +104,7 @@ export const AssetDetails = () => {
                                 </div>
                             </div>
                             <div className="card mb-3 border-0 shadow-sm">     
-                                <div className="card-header bg-dark p-3">
+                                <div className="card-header bg-light p-3">
                                     <h2 className="h5 mb-0">Transactions</h2>
                                 </div>
                                 
