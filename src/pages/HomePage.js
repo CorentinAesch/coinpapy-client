@@ -21,7 +21,10 @@ export const HomePage = () => {
 
     return (
       <>
-        <section className="mt-5 py-2 py-md-6">
+        <section className="container py-5">
+            <div className="py-5"></div>
+        </section>
+        <section className="mt-5 py-2 py-md-6 mt-3">
           <div className="container">
               <div className="align-items-center">
                   <div className="text-center">
@@ -38,6 +41,10 @@ export const HomePage = () => {
                   </div>
               </div>  
             </div>
+        </section>
+
+        <section className="container py-5">
+            <div className="py-5"></div>
         </section>
 
         <section className="py-4 py-md-5">
