@@ -41,12 +41,12 @@ export const Dashboard = () => {
                         <h2 className="h5 mb-0">Trendings</h2>
                     </div>
                     <div className="card-body pb-2 pt-0 mx-0 px-3">
-                        <div className="d-flex justify-content-around p-2 border-bottom">
+                        <div className="d-flex flex-row justify-content-around p-2 border-bottom">
                             {trending && trending.coins.map((item) => {
                               return (
                                 <div class="card d-inline-flex flex-column" >
                                   <img src={item.item.small} class="card-img-top p-2" alt={item.item.id} />
-                                  <div class="card-body">
+                                  <div class="card-body d-flex flex-column justify-space-between">
                                     <h4 class="card-body">{item.item.id}</h4>
                                     <Link to={"/coins"}><button className="btn btn-outline-primary w-100 mt-3">Details</button></Link>
                                   </div>
