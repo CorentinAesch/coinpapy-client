@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 
 import { getAllAssets, getAsset, deleteATransaction } from '../api';
 import { amountFormatter } from '../helpers/helpers'
+import EditTransaction  from './EditTransaction';
 
 
 export const AssetDetails = () => {
@@ -61,6 +62,10 @@ export const AssetDetails = () => {
             setPercentageHoldings(percentage.toFixed(2));
         })();
     }, [asset])
+
+    const handleDelete = (assetId, transactionId) => {
+        deleteATransaction(assetId, transactionId)
+    }
     
 
     return (
@@ -124,12 +129,10 @@ export const AssetDetails = () => {
                                                     <div className="col d-none d-lg-block">{transaction.notes ? transaction.notes : "" }</div>
                                                     <div align="right" className="col d-flex align-items-center justify-content-between pe-0">
                                                     {transaction.created}
-                                                    {/* <div className="d-flex">
-                                                        <Link to={"/dashboard"} className="btn px-1 btn-sm"><img src="/src/Images/edit-cb.svg" alt="edit" width="18"/></Link>
-                                                        <form onSubmit={deleteATransaction(asset._id, transaction._id)} method="POST">
-                                                            <button type="submit" className="btn px-1 btn-sm"><img src="/src/images/delete-cb.svg" alt="delete" width="18"/></button>
-                                                        </form>
-                                                    </div> */}
+                                                    <div className="d-flex align-items-center ml-5">
+                                                        <Link to={<EditTransaction props={transaction} />} className="btn px-1 btn-sm">Edit</Link>
+                                                        <button onClick={handleDelete(assetId, transaction._id)} className="btn btn-outline-primary">Delete</button>
+                                                    </div>
                                                     </div>
                                                 </li>
                                             </ul>
